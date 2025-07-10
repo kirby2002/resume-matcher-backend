@@ -56,7 +56,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-model = SentenceTransformer('./all-MiniLM-L6-v2')
+model = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
 
 # def extract_text(file: UploadFile):
 #     contents = file.file.read()
