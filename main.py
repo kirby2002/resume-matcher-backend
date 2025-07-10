@@ -96,3 +96,10 @@ async def analyze(resume: UploadFile = File(...), jd: str = Form(...)):
         "similarity": round(similarity * 100, 2),
         "match": "High" if similarity > 0.7 else "Moderate" if similarity > 0.4 else "Low"
     }
+
+import os
+
+if __name__ == "__main__":
+    import uvicorn
+    port = int(os.environ.get("PORT", 10000))
+    uvicorn.run("main:app", host="0.0.0.0", port=port, reload=True)
